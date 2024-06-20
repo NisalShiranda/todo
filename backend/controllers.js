@@ -24,8 +24,22 @@ const addEvent = async (req,res,next) => {
     .catch((err) => {
         res.json({err});
     })
+};
 
+const updateEvent = (req,res,next) =>{
+    const { id,event } = req.body;
+    Event.updateOne(
+        {id:id},
+        {$set:{event:event}}
+    )
+    .then(() => {
+        res.json({message: 'Event updated'})
+    })
+    .catch((err) => {
+        res.json({err});
+    })
 };
 
 exports.getEvents = getEvents;
 exports.addEvent = addEvent;
+exports.updateEvent = updateEvent;
