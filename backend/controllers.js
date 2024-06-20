@@ -40,6 +40,18 @@ const updateEvent = (req,res,next) =>{
     })
 };
 
+const deleteEvent = (req,res,next) =>{
+    const { id } = req.body;
+    Event.deleteOne({id:id})
+    .then(() => {
+        res.json({message: 'Event deleted'})
+    })
+    .catch((err) => {
+        res.json({err});
+    })
+};
+
 exports.getEvents = getEvents;
 exports.addEvent = addEvent;
 exports.updateEvent = updateEvent;
+exports.deleteEvent = deleteEvent;
