@@ -1,8 +1,21 @@
 
 import './App.css'
 import EventForm from "./components/EventForm"
+import EventTable from './components/EventTable'
 
 function App() {
+
+  const event = [
+    {
+      event: "Event 1",
+    },
+    {
+      event: "Event 2",
+    },
+    {
+      event: "Event 3",
+    },
+  ]
   
 
   return (
@@ -13,6 +26,9 @@ function App() {
       </div>
       <div className="form-container ">
         <EventForm />
+      </div>
+      <div className="form-container">
+        <EventTable />
       </div>
     </section>
       
