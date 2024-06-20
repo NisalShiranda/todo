@@ -13,7 +13,7 @@ const getEvents = async (req,res,next) => {
 
 const addEvent = async (req,res,next) => {
     const event = new Event({
-        id:req.body.id,
+        
         event:req.body.event
     });
 
@@ -27,9 +27,9 @@ const addEvent = async (req,res,next) => {
 };
 
 const updateEvent = (req,res,next) =>{
-    const { id,event } = req.body;
+    const { _id,event } = req.body;
     Event.updateOne(
-        {id:id},
+        {_id},
         {$set:{event:event}}
     )
     .then(() => {
@@ -41,8 +41,8 @@ const updateEvent = (req,res,next) =>{
 };
 
 const deleteEvent = (req,res,next) =>{
-    const { id } = req.body;
-    Event.deleteOne({id:id})
+    const { _id } = req.body;
+    Event.deleteOne({_id})
     .then(() => {
         res.json({message: 'Event deleted'})
     })
