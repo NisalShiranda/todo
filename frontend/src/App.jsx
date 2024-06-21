@@ -27,8 +27,12 @@ function App() {
       <div className="form-container ">
         <EventForm />
       </div>
-      <div className="form-container">
-        <EventTable />
+      <div className="table-container">
+        <EventTable
+          event={event}
+        
+        
+         />
       </div>
     </section>
       

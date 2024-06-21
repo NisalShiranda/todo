@@ -23,3 +23,11 @@
   border-radius: 5px;
   color: black;
 }
+
+.table-container{
+  max-width: 500px;
+  background-color: #4C3BCF;
+  margin: 0 auto;
+  border-radius: 5px;
+  color: black;
+}
