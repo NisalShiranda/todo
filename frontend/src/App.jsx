@@ -77,6 +77,7 @@ const App = ()  => {
       getEvents();
       setSubmitted(false);
       setIsEdit(true);
+      setIsEdit(false);
     })
     .catch((err) => {
       console.log({message:"update Error", err})
